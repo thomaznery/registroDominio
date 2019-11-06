@@ -1,11 +1,13 @@
 package br.com.registroDominio.modelo;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 @Entity(name = "tb_gen_dominio")
-public class Dominio {
+public class Dominio extends PanacheEntityBase implements Serializable{
 
     @Id
     @Column(name = "dom_codigo", unique = true, nullable = false)
@@ -24,6 +26,7 @@ public class Dominio {
     @OneToMany(mappedBy = "dominio", cascade = { CascadeType.ALL }, fetch = FetchType.LAZY)
     @OrderBy("regIdRegistro")
     private List<Registro> registros;
+
 
     public Dominio() {
     }
