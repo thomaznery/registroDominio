@@ -14,8 +14,7 @@ public class DominioResourceTest {
         given()
           .when().get("/dominio")
           .then()
-             .statusCode(200)
-             .body(is("hello"));
+             .statusCode(200);
     }
 
 }

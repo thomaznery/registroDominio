@@ -11,15 +11,9 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @ApplicationScoped
-public class DomonioService {
+public class DominioService {
 
     @Inject
     EntityManager em ;
-
-    @Transactional
-    public List<Dominio> findAll(){
-
-        return null;
-    }
 
 }
